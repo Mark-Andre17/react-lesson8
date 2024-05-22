@@ -7,7 +7,6 @@ function App() {
 
   const count  = useSelector((state) => state);
 
-
   const handlePlus = () => {
     dispatch({
       type: 'plus'

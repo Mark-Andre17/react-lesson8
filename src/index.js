@@ -7,16 +7,26 @@ import App from './App';
 
 const reducer = (state = 0, action) => {
     
-    if(action.type === 'plus') {
-        return state + 1;
+    switch (action.type) {
+         case 'plus':
+            return state + 1;
+        case'minus':
+            if(state > 0) return state - 1;
+        case'reset':
+            return state = 0;
+        default:
+            return state;
     }
-    if(action.type ==='minus' && state > 0) {
-        return state - 1;
-    }
-    if(action.type === 'reset'){
-        return state = 0;
-    }
-    return state;
+    // if(action.type === 'plus') {
+    //     return state + 1;
+    // }
+    // if(action.type ==='minus' && state > 0) {
+    //     return state - 1;
+    // }
+    // if(action.type === 'reset'){
+    //     return state = 0;
+    // }
+    // return state;
 }
 const store = createStore(reducer);
 
